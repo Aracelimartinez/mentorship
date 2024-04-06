@@ -80,5 +80,5 @@ Rails.application.configure do
   config.hosts << /[a-z0-9-]+\.app\.github\.dev/
 
   # Descomente essa linha caso você esteja usando URLs "não padrões" (por exemplo a gerada pelo github codespaces).
-  config.action_controller.forgery_protection_origin_check = true
+  #config.action_controller.forgery_protection_origin_check = true
 end
