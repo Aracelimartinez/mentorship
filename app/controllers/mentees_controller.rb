@@ -9,7 +9,8 @@ class MenteesController < ApplicationController
   end
 
   # GET /mentees/1 or /mentees/1.json
-  def show; end
+  def show
+  end
 
   # GET /mentees/new
   def new
@@ -17,7 +18,8 @@ class MenteesController < ApplicationController
   end
 
   # GET /mentees/1/edit
-  def edit; end
+  def edit
+  end
 
   # POST /mentees or /mentees.json
   def create
@@ -27,7 +29,7 @@ class MenteesController < ApplicationController
 
     respond_to do |format|
       if @mentee.save
-        format.html { redirect_to mentee_url(@mentee), notice: 'Mentee was successfully created.' }
+        format.html { redirect_to mentee_url(@mentee), notice: "Mentee was successfully created." }
         format.json { render :show, status: :created, location: @mentee }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +42,7 @@ class MenteesController < ApplicationController
   def update
     respond_to do |format|
       if @mentee.update(mentee_params)
-        format.html { redirect_to mentee_url(@mentee), notice: 'Mentee was successfully updated.' }
+        format.html { redirect_to mentee_url(@mentee), notice: "Mentee was successfully updated." }
         format.json { render :show, status: :ok, location: @mentee }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,7 +56,7 @@ class MenteesController < ApplicationController
     @mentee.destroy!
 
     respond_to do |format|
-      format.html { redirect_to mentees_url, notice: 'Mentee was successfully destroyed.' }
+      format.html { redirect_to mentees_url, notice: "Mentee was successfully destroyed." }
       format.json { head :no_content }
     end
   end
