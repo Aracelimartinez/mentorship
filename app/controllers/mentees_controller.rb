@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class MenteesController < ApplicationController
-  before_action :set_mentee, only: %i[ show edit update destroy ]
+  before_action :set_mentee, only: %i[show edit update destroy]
 
   # GET /mentees or /mentees.json
   def index
@@ -60,13 +62,14 @@ class MenteesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mentee
-      @mentee = Mentee.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def mentee_params
-      params.require(:mentee).permit(:name, :bio, :email)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_mentee
+    @mentee = Mentee.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def mentee_params
+    params.require(:mentee).permit(:name, :bio, :email)
+  end
 end

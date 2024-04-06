@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 ruby "3.3.0"
@@ -9,12 +11,12 @@ gem "dotenv", "~> 3.1"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
-gem "sprockets-rails"
-gem "puma", ">= 5.0"
 gem "importmap-rails"
-gem "turbo-rails"
-gem "stimulus-rails"
 gem "jbuilder"
+gem "puma", ">= 5.0"
+gem "sprockets-rails"
+gem "stimulus-rails"
+gem "turbo-rails"
 
 gem "redis", "~> 5.1"
 gem "sidekiq", "~> 7.2"
@@ -53,6 +55,10 @@ end
 group :test do
   # https://github.com/rspec/rspec-rails
   gem "rspec-rails", "6.1.0"
-  gem "shoulda-matchers"
   gem "rspec-sidekiq", "~> 4.1"
+  gem "shoulda-matchers"
 end
+
+gem "authentication-zero", "~> 2"
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+gem "bcrypt", "~> 3.1.7"

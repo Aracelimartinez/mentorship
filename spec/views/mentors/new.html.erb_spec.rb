@@ -1,4 +1,6 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe "mentors/new", type: :view do
   before(:each) do
@@ -14,7 +16,6 @@ RSpec.describe "mentors/new", type: :view do
     render
 
     assert_select "form[action=?][method=?]", mentors_path, "post" do
-
       assert_select "input[name=?]", "mentor[name]"
 
       assert_select "input[name=?]", "mentor[email]"

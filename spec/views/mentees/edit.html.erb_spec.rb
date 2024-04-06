@@ -1,13 +1,15 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe "mentees/edit", type: :view do
-  let(:mentee) {
+  let(:mentee) do
     Mentee.create!(
       name: "MyString",
       bio: "MyText",
       email: "MyString"
     )
-  }
+  end
 
   before(:each) do
     assign(:mentee, mentee)
@@ -17,7 +19,6 @@ RSpec.describe "mentees/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", mentee_path(mentee), "post" do
-
       assert_select "input[name=?]", "mentee[name]"
 
       assert_select "textarea[name=?]", "mentee[bio]"

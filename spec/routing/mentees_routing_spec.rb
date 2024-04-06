@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rails_helper"
 
 RSpec.describe MenteesController, type: :routing do
@@ -17,7 +19,6 @@ RSpec.describe MenteesController, type: :routing do
     it "routes to #edit" do
       expect(get: "/mentees/1/edit").to route_to("mentees#edit", id: "1")
     end
-
 
     it "routes to #create" do
       expect(post: "/mentees").to route_to("mentees#create")

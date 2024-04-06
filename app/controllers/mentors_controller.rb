@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class MentorsController < ApplicationController
-  before_action :set_mentor, only: %i[ show edit update destroy ]
+  before_action :set_mentor, only: %i[show edit update destroy]
 
   # GET /mentors or /mentors.json
   def index
@@ -58,13 +60,14 @@ class MentorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_mentor
-      @mentor = Mentor.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def mentor_params
-      params.require(:mentor).permit(:name, :email, :url, :bio)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_mentor
+    @mentor = Mentor.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def mentor_params
+    params.require(:mentor).permit(:name, :email, :url, :bio)
+  end
 end
