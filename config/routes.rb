@@ -4,6 +4,7 @@ require 'sidekiq/web'
 require 'sidekiq-scheduler/web'
 
 Rails.application.routes.draw do
+  resources :schedules
   resources :mentors
   resources :mentees
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
