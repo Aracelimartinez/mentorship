@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resource :password_reset, only: %i[new edit create update]
   end
   root "home#index"
+  resources :schedules
   resources :mentors
   resources :mentees
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

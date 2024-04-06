@@ -7,13 +7,13 @@ RSpec.describe "mentors/index", type: :view do
     assign(:mentors, [
       Mentor.create!(
         name: "Name",
-        email: "Email",
+        email: "test@test.com",
         url: "Url",
         bio: "MyText"
       ),
       Mentor.create!(
         name: "Name",
-        email: "Email2",
+        email: "test2@test.com",
         url: "Url",
         bio: "MyText"
       )

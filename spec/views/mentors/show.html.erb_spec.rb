@@ -6,7 +6,7 @@ RSpec.describe "mentors/show", type: :view do
   before(:each) do
     assign(:mentor, Mentor.create!(
       name: "Name",
-      email: "Email",
+      email: "test@test.com",
       url: "Url",
       bio: "MyText"
     ))

@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_240_406_190_337) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_06_190337) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -64,4 +64,18 @@ ActiveRecord::Schema[7.1].define(version: 20_240_406_190_337) do
   add_foreign_key 'email_verification_tokens', 'users'
   add_foreign_key 'password_reset_tokens', 'users'
   add_foreign_key 'sessions', 'users'
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "mentor_id", null: false
+    t.bigint "mentee_id", null: false
+    t.datetime "date"
+    t.string "description"
+    t.boolean "accepted", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mentee_id"], name: "index_schedules_on_mentee_id"
+    t.index ["mentor_id"], name: "index_schedules_on_mentor_id"
+  end
+
+  add_foreign_key "schedules", "mentees"
+  add_foreign_key "schedules", "mentors"
 end

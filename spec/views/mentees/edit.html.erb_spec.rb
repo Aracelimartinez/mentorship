@@ -7,7 +7,7 @@ RSpec.describe "mentees/edit", type: :view do
     Mentee.create!(
       name: "MyString",
       bio: "MyText",
-      email: "MyString"
+      email: "test@test.com"
     )
   end
 

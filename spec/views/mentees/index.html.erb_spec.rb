@@ -8,12 +8,12 @@ RSpec.describe "mentees/index", type: :view do
       Mentee.create!(
         name: "Name",
         bio: "MyText",
-        email: "teste@teste.com"
+        email: "test@test.com"
       ),
       Mentee.create!(
         name: "Name",
         bio: "MyText",
-        email: "teste2@teste.com"
+        email: "test2@test.com"
       )
     ])
   end

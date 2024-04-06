@@ -6,7 +6,7 @@ RSpec.describe "mentors/edit", type: :view do
   let(:mentor) do
     Mentor.create!(
       name: "MyString",
-      email: "MyString",
+      email: "test@test.com",
       url: "MyString",
       bio: "MyText"
     )
