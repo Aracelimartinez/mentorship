@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "schedules/edit", type: :view do
   let(:schedule) {
@@ -18,7 +18,6 @@ RSpec.describe "schedules/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", schedule_path(schedule), "post" do
-
       assert_select "input[name=?]", "schedule[mentor_id]"
 
       assert_select "input[name=?]", "schedule[mentee_id]"
